@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}Company Evaluation - KOOK{% endblock %}
+
+
+{% block content %}
+ <h1>Company Evaluation</h1>
+
+
+ <form method="POST" action="/company">
+   <label for="company">Company Name:</label>
+   <input type="text" id="company" name="company" required placeholder="e.g., Apple">
+
+
+   <label for="pe_ratio">P/E Ratio:</label>
+   <input type="number" id="pe_ratio" name="pe_ratio" step="0.01" min="0" required placeholder="e.g., 15.5">
+
+
+   <label for="current_assets">Current Assets:</label>
+   <input type="number" id="current_assets" name="current_assets" step="0.01" min="0" required placeholder="e.g., 500000">
+
+
+   <label for="current_liabilities">Current Liabilities:</label>
+   <input type="number" id="current_liabilities" name="current_liabilities" step="0.01" min="0" required placeholder="e.g., 250000">
+
+
+   <label for="total_assets">Total Assets:</label>
+   <input type="number" id="total_assets" name="total_assets" step="0.01" min="0" required placeholder="e.g., 2000000">
+
+
+   <label for="total_liabilities">Total Liabilities:</label>
+   <input type="number" id="total_liabilities" name="total_liabilities" step="0.01" min="0" required placeholder="e.g., 1500000">
+
+
+   <label for="operating_income">Operating Income:</label>
+   <input type="number" id="operating_income" name="operating_income" step="0.01" required placeholder="e.g., 150000">
+
+
+   <label for="total_revenue">Total Revenue:</label>
+   <input type="number" id="total_revenue" name="total_revenue" step="0.01" required placeholder="e.g., 1000000">
+
+
+   <label for="free_cash_flow">Free Cash Flow:</label>
+   <input type="number" id="free_cash_flow" name="free_cash_flow" step="0.01" required placeholder="e.g., 120000">
+
+
+   <label for="shares_outstanding">Outstanding Shares:</label>
+   <input type="number" id="shares_outstanding" name="shares_outstanding" step="0.01" min="0" required placeholder="e.g., 1000000">
+
+
+   <button type="submit" class="submit-btn">Submit Evaluation</button>
+ </form>
+
+
+ <a href="/">← Back to Home</a>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block title %}Growth Evaluation Result - KOOK{% endblock %}
+
+{% block content %}
+<style>
+  :root {
+    --navy: #0a0b48;
+    --offwhite: #f9f6f1;
+    --light-blue: #cce6f4;
+  }
+
+  .main-content {
+    background-color: #ffffff;
+    border: 6px solid var(--navy);
+    padding: 60px 40px;
+    max-width: 1000px;
+    margin: 60px auto;
+    text-align: center;
+    color: var(--navy);
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 30px;
+    color: var(--navy);
+  }
+
+  .highlighted {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 20px;
+  }
+
+  .result-box {
+    margin-top: 40px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    background-color: var(--light-blue);
+    color: var(--navy);
+  }
+
+  .result-box p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  .btn-group {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    background-color: var(--navy);
+    color: white;
+    padding: 12px 28px;
+    font-family: monospace;
+    font-size: 1rem;
+    border: none;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #001030;
+  }
+
+  @media (max-width: 768px) {
+    .main-content {
+      padding: 40px 20px;
+      margin: 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .btn-group {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+</style>
+
+<div class="main-content">
+  <h1>Growth Evaluation Result</h1>
+
+  <p class="highlighted"><strong>Company Evaluated:</strong> {{ company }}</p>
+  <p class="highlighted"><strong>Total Growth Score:</strong> {{ total_score }} / 75</p>
+
+  <div class="result-box">
+    <p><strong>Conclusion:</strong></p>
+    <p>{{ result }}</p>
+  </div>
+
+  <div class="btn-group">
+    <a href="/growth" class="btn">Try Again</a>
+    <a href="/" class="btn">Back to Home</a>
+  </div>
+</div>
+{% endblock %}

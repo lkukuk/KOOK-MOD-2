@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center py-20">
+    <h2 class="text-4xl font-bold mb-4">Welcome to KOOK Investment App</h2>
+    <p class="text-lg mb-6">Track your growth, risk profile, and company evaluations with style and precision.</p>
+    <a href="{{ url_for('growth_route') }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Start Evaluating</a>
+</div>
+{% endblock %}

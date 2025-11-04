@@ -1,0 +1,7 @@
+<script>start("/Users/lidiya/KOOK/.venv/");</script>
+<script>onHasParentDirectory();</script>
+<script>addRow("bin","bin",1,416,"416 B",1759419809,"10/2/25, 10:43:29 AM");</script>
+<script>addRow("include","include",1,96,"96 B",1759266170,"9/30/25, 4:02:50 PM");</script>
+<script>addRow("lib","lib",1,96,"96 B",1759266170,"9/30/25, 4:02:50 PM");</script>
+<script>addRow(".gitignore",".gitignore",0,69,"69 B",1759266170,"9/30/25, 4:02:50 PM");</script>
+<script>addRow("pyvenv.cfg","pyvenv.cfg",0,261,"261 B",1759266170,"9/30/25, 4:02:50 PM");</script>

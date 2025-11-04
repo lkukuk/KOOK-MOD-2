@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto p-6 bg-white rounded-2xl shadow-lg">
+    <h2 class="text-3xl font-bold mb-6 text-center">Growth Evaluation Form</h2>
+
+    <form method="POST">
+        <!-- Company Name -->
+        <div class="mb-6">
+            <label class="block text-lg font-semibold mb-2">Company Name</label>
+            <input type="text" name="company" placeholder="Enter company name" required
+                   class="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <!-- Scoring Guidelines -->
+        <div class="mb-6 p-4 bg-gray-50 rounded-xl shadow-inner">
+            <p class="font-medium">Rate Each Metric on a scale of 1–5:</p>
+            <ul class="list-disc pl-6 text-gray-700 mt-2">
+                <li>5 = Excellent (ideal values hit or exceeded)</li>
+                <li>4 = Above Average (meets standards and stands out)</li>
+                <li>3 = Average (meets standards but does not stand out)</li>
+                <li>2 = Below Average (does not meet standards)</li>
+                <li>1 = Poor (underperforms standards)</li>
+            </ul>
+        </div>
+
+        <!-- Metrics -->
+        {% for idx, metric in metrics %}
+        <div class="mb-4 p-4 bg-gray-50 rounded-xl shadow-sm">
+            <label class="block font-semibold mb-2">{{ metric[0] }}</label>
+            <p class="text-sm text-gray-500 mb-2">{{ metric[1] }}</p>
+            <select name="score_{{ idx }}" class="w-32 p-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="1">1 – Poor</option>
+                <option value="2">2 – Below Average</option>
+                <option value="3">3 – Average</option>
+                <option value="4">4 – Above Average</option>
+                <option value="5">5 – Excellent</option>
+            </select>
+        </div>
+        {% endfor %}
+
+        <!-- Submit Button -->
+        <div class="text-center mt-6">
+            <button type="submit"
+                    class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-2xl hover:bg-blue-700 shadow-md">
+                Submit Evaluation
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

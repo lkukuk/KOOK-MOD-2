@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to KOOK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0a0b48;
+      font-family: 'Cinzel', serif;
+      color: #cce6f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .box {
+      background: white;
+      color: #0a0b48;
+      padding: 60px;
+      border: 6px solid #0a0b48;
+      max-width: 600px;
+    }
+    input {
+      padding: 12px;
+      width: 80%;
+      font-family: monospace;
+      margin-top: 20px;
+    }
+    button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-family: monospace;
+      background-color: #0a0b48;
+      color: white;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Welcome to KOOK</h1>
+    <form method="POST">
+      <label for="username">Please enter your name:</label><br>
+      <input type="text" name="username" id="username" required><br>
+      <button type="submit">Enter</button>
+    </form>
+  </div>
+</body>
+</html>

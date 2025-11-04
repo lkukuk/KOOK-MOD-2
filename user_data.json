@@ -1,0 +1,32 @@
+{
+    "Lidiya": {
+        "risk": {
+            "score": 35,
+            "message": "You are an aggressive investor, you seek high returns, and accept volatility. You're comfortable taking significant risks for the potential of high returns.",
+            "advisor": {
+                "title": "Aggressive Investor",
+                "goals": [
+                    "Maximize capital appreciation",
+                    "Tolerate short-term losses for long-term gains",
+                    "Seek alpha and thematic growth"
+                ],
+                "portfolio": {
+                    "Small-Cap and Micro-Cap Funds": "High growth potential, albeit volatile",
+                    "Growth Equity Funds": "Invest in companies with strong earnings growth",
+                    "Emerging Market Funds": "High-risk, high-return international exposure",
+                    "Technology / Innovation ETFs": "Targeted growth in AI, cloud, biotech, etc.",
+                    "Thematic / ESG / Blockchain ETFs": "Trend-driven and speculative growth",
+                    "Actively Managed Funds": "Try to outperform the market via expert management",
+                    "International Equity Funds": "Broaden high-growth potential",
+                    "High-Yield Bonds (Junk)": "For aggressive fixed income exposure",
+                    "Private Equity or Alt ETFs": "Non-traditional assets for high returns"
+                },
+                "tips": [
+                    "Maintain a small percentage (10\u201320%) in bonds or stable funds for downside protection",
+                    "Watch sector and single-country overexposure",
+                    "Even aggressive investors should limit high-risk assets to a portion of portfolio"
+                ]
+            }
+        }
+    }
+}

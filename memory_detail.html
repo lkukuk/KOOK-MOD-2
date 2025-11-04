@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto p-6 space-y-8">
+
+    <h2 class="text-3xl font-bold mb-6 text-center">Memory Details: {{ company }}</h2>
+
+    <!-- Growth Evaluation Card -->
+    {% if data.growth %}
+    <div class="bg-white rounded-2xl shadow-lg p-6">
+        <h3 class="text-2xl font-semibold mb-4 text-blue-600">Growth Evaluation</h3>
+        <p class="mb-2"><strong>Total Score:</strong> {{ data.growth.total_score }} / 75</p>
+        <p class="mb-4"><strong>Verdict:</strong> {{ data.growth.result }}</p>
+        <ul class="list-disc pl-6 space-y-1">
+            {% for item in data.growth.metric_scores %}
+            <li><strong>{{ item.metric }}:</strong> {{ item.score }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <div class="bg-white rounded-2xl shadow-lg p-6 text-gray-500">
+        <p>No growth evaluation data available for this company.</p>
+    </div>
+    {% endif %}
+
+    <!-- Company Evaluation Card -->
+    {% if data.company %}
+    <div class="bg-white rounded-2xl shadow-lg p-6">
+        <h3 class="text-2xl font-semibold mb-4 text-green-600">Company Evaluation</h3>
+        <p class="mb-4"><strong>Verdict:</strong> {{ data.company.verdict }}</p>
+        <ul class="list-disc pl-6 space-y-1">
+            {% for e in data.company.evaluations %}
+            <li><strong>{{ e.metric }}:</strong> {{ e.detail }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <div class="bg-white rounded-2xl shadow-lg p-6 text-gray-500">
+        <p>No company evaluation data available for this company.</p>
+    </div>
+    {% endif %}
+
+    <!-- Risk Assessment Card -->
+    {% if data.risk %}
+    <div class="bg-white rounded-2xl shadow-lg p-6">
+        <h3 class="text-2xl font-semibold mb-4 text-red-600">Risk Assessment</h3>
+        <p class="mb-2"><strong>Score:</strong> {{ data.risk.score }}</p>
+        <p class="mb-2"><strong>Message:</strong> {{ data.risk.message }}</p>
+
+        <div class="mt-4">
+            <h4 class="font-semibold mb-2">Advisor Portfolio & Tips:</h4>
+            <ul class="list-disc pl-6 space-y-1">
+                {% for key, value in data.risk.advisor.portfolio.items() %}
+                <li><strong>{{ key }}:</strong> {{ value }}</li>
+                {% endfor %}
+            </ul>
+
+            {% if data.risk.advisor.tips %}
+            <ul class="list-disc pl-6 mt-2 text-gray-700">
+                {% for tip in data.risk.advisor.tips %}
+                <li>{{ tip }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+    {% else %}
+    <div class="bg-white rounded-2xl shadow-lg p-6 text-gray-500">
+        <p>No risk assessment data available for this company.</p>
+    </div>
+    {% endif %}
+
+    <!-- Back / Delete Buttons -->
+    <div class="flex flex-col md:flex-row justify-between mt-6 gap-4">
+        <a href="{{ url_for('memory') }}" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-2xl hover:bg-blue-700 shadow-md text-center">
+            Back to Memory
+        </a>
+        <form method="POST" action="{{ url_for('delete_company', company=company) }}">
+            <button type="submit" class="px-6 py-3 bg-red-600 text-white font-semibold rounded-2xl hover:bg-red-700 shadow-md text-center">
+                Delete This Company
+            </button>
+        </form>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>KOOK Private</title>
+
+
+ <!-- Elegant Serif and Script Fonts -->
+ <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+
+ <style>
+  
+   :root {
+     --navy: #001A40;
+     --light-blue: #cce6f4;
+     --white: #ffffff;
+   }
+
+
+   html, body {
+     margin: 0;
+     padding: 0;
+     background-color: var(--light-blue);
+     font-family: 'Cinzel', serif;
+     color: var(--navy);
+     height: 100%;
+   }
+
+
+   .top-bar {
+     display: flex;
+     justify-content: space-between;
+     padding: 20px 40px;
+     font-family: monospace;
+     font-size: 0.9rem;
+   }
+
+
+   .logo {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 4rem;
+     margin-top: 120px;
+   }
+
+
+   .logo-main {
+     letter-spacing: 0.25em;
+   }
+
+
+   .logo-dash {
+     margin: 0 0.2em;
+   }
+
+
+   .logo-script {
+     font-family: 'DM Serif Display', cursive;
+     font-size: 1.4em;
+     position: relative;
+     top: 0.2em;
+   }
+
+
+   .button-row {
+     margin-top: 80px;
+     display: flex;
+     justify-content: center;
+     gap: 40px;
+     flex-wrap: wrap;
+   }
+
+
+   .nav-button {
+     text-decoration: none;
+     background-color: var(--navy);
+     color: var(--white);
+     padding: 14px 28px;
+     border: none;
+     font-size: 0.85rem;
+     letter-spacing: 0.15em;
+     border-radius: 16px;
+     transition: background-color 0.3s ease;
+   }
+
+
+   .nav-button:hover {
+     background-color: #002b60;
+   }
+
+
+   @media (max-width: 768px) {
+     .logo {
+       font-size: 2.4rem;
+       flex-direction: column;
+     }
+
+
+     .button-row {
+       flex-direction: column;
+       gap: 20px;
+       padding: 0 20px;
+     }
+   }
+ </style>
+</head>
+<body>
+ <div class="top-bar">
+   <div>CREATED BY LIDIYA KUKUK</div>
+   <div>developmental - 127.0.0.1:5000</div>
+ </div>
+
+
+ <div class="logo">
+   <span class="logo-main">THE</span>
+   <span class="logo-dash">-</span>
+   <span class="logo-script">KOOK</span>
+ </div>
+
+
+ <div class="button-row">
+   <a href="/risk" class="nav-button">RISK ASSESSMENT</a>
+   <a href="/growth" class="nav-button">GROWTH EVALUATION</a>
+   <a href="/company" class="nav-button">COMPANY EVALUATION</a>
+   <a href="/memory" class="nav-button">MEMORY</a>
+ </div>
+</body>
+</html>

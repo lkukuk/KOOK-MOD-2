@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" /> <!-- Set character encoding -->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsive viewport -->
+ <title>{% block title %}KOOK Private{% endblock %}</title> <!-- Page title, can be overridden in child templates -->
+
+ <!-- Elegant Fonts -->
+ <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+
+ <style>
+   :root {
+     --navy: #001A40; /* Custom CSS variable for dark blue */
+     --light-blue: #cce6f4; /* Custom CSS variable for light blue */
+     --white: #ffffff; /* Custom CSS variable for white */
+   }
+
+   html, body {
+     margin: 0; /* Remove default margin */
+     padding: 0; /* Remove default padding */
+     background-color: var(--light-blue); /* Light blue page background */
+     color: var(--navy); /* Default text color */
+     font-family: 'Cinzel', serif; /* Elegant serif font */
+     font-size: 16px; /* Base font size */
+     line-height: 1.6; /* Readable line spacing */
+   }
+
+   .top-bar {
+     display: flex; /* Flex layout for top bar */
+     justify-content: space-between; /* Space between left and right items */
+     padding: 20px 40px; /* Padding inside top bar */
+     font-family: monospace; /* Monospace font for top bar */
+     font-size: 0.9rem; /* Slightly smaller text */
+   }
+
+   .main-content {
+     padding: 60px 40px; /* Space inside main content */
+     max-width: 1000px; /* Maximum width for content */
+     margin: 0 auto; /* Center content horizontally */
+     text-align: center; /* Center-align text inside */
+     background: #fff; /* White background for main content */
+     border: 6px solid var(--navy); /* Navy border around content */
+   }
+
+   h1 {
+     font-size: 3rem; /* Large heading size */
+     font-weight: 400; /* Normal font weight */
+     letter-spacing: 0.05rem; /* Slight spacing between letters */
+     margin-bottom: 40px; /* Space below heading */
+   }
+
+   form {
+     text-align: left; /* Left-align form fields */
+     max-width: 700px; /* Limit form width */
+     margin: 0 auto; /* Center form horizontally */
+   }
+
+   label, p strong {
+     display: block; /* Each label or strong text on its own line */
+     margin-top: 25px; /* Space above element */
+     font-size: 1.1rem; /* Slightly larger text */
+   }
+
+   input[type="text"],
+   input[type="number"],
+   input[type="radio"] {
+     margin-top: 10px; /* Space above inputs */
+   }
+
+   input[type="radio"] {
+     margin-right: 8px; /* Space between radio and label */
+   }
+
+   .form-group {
+     margin-bottom: 20px; /* Space below each form group */
+   }
+
+   .submit-btn {
+     margin-top: 30px; /* Space above submit button */
+     padding: 12px 30px; /* Space inside button */
+     background-color: var(--light-blue); /* Light blue background */
+     color: var(--navy); /* Dark blue text */
+     border: 4px solid var(--navy); /* Navy border */
+     border-radius: 40px; /* Fully rounded button */
+     font-family: monospace; /* Monospace font */
+     font-size: 1rem; /* Standard font size */
+     cursor: pointer; /* Pointer cursor on hover */
+     transition: background-color 0.3s ease; /* Smooth hover transition */
+   }
+
+   .submit-btn:hover {
+     background-color: #b5d8e9; /* Slightly darker blue on hover */
+   }
+
+   .back-link {
+     display: inline-block; /* Inline-block for spacing */
+     margin-top: 20px; /* Space above link */
+     background-color: var(--navy); /* Dark blue background */
+     color: white; /* White text */
+     padding: 10px 24px; /* Space inside link */
+     font-family: monospace; /* Monospace font */
+     text-decoration: none; /* Remove underline */
+   }
+
+   .back-link:hover {
+     background-color: #002b60; /* Darker blue on hover */
+   }
+
+   @media (max-width: 768px) { /* Mobile responsiveness */
+     h1 {
+       font-size: 2.2rem; /* Smaller heading on mobile */
+     }
+
+     .main-content {
+       padding: 40px 20px; /* Smaller padding on mobile */
+       margin: 20px; /* Add margin around content */
+     }
+
+     .result-box {
+       background-color: rgba(255, 255, 255, 0.1); /* Transparent white box */
+       padding: 30px; /* Space inside result box */
+       border-radius: 16px; /* Rounded corners */
+       color: #cce6f4; /* Light blue text */
+       margin: 30px 0; /* Vertical spacing */
+     }
+
+     .back-link {
+       display: inline-block; /* Inline-block for spacing */
+       margin-top: 20px; /* Space above link */
+       background-color: #001A40; /* Navy background */
+       color: white; /* White text */
+       text-decoration: none; /* Remove underline */
+       padding: 10px 24px; /* Space inside link */
+       font-family: monospace; /* Monospace font */
+     }
+     /* Top Header Bar */
+.top-bar {
+    display: flex; /* Flex layout for left/right content */
+    justify-content: space-between; /* Space between left and right text */
+    align-items: center; /* Vertically center text */
+    padding: 15px 40px; /* Space inside header */
+    font-family: monospace; /* Monospace text */
+    font-size: 0.9rem; /* Slightly smaller font */
+    background-color: #001A40; /* Dark navy background */
+    color: white; /* White text */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Subtle shadow */
+    border-bottom: 4px solid #2563eb; /* KOOK accent line */
+    position: sticky; /* Stays at top when scrolling */
+    top: 0; /* Stick to top */
+    z-index: 1000; /* Ensure it sits above other content */
+}
+   }
+ </style>
+</head>
+<body>
+ <div class="top-bar">
+   <div>CREATED BY LIDIYA KUKUK</div> <!-- Left side text -->
+   <div>developmental - 127.0.0.1:5000</div> <!-- Right side text -->
+ </div>
+
+ <div class="main-content">
+   {% block content %}{% endblock %} <!-- Placeholder for page-specific content -->
+ </div>
+</body>
+</html>

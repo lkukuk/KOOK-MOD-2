@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="text-2xl font-bold mb-4">Company Evaluation Results</h2>
+
+<p><strong>Company:</strong> {{ company }}</p>
+
+<h3 class="text-xl font-semibold mt-4 mb-2">Evaluation Details</h3>
+<ul class="list-disc pl-6">
+    {% for e in evaluations %}
+        <li><strong>{{ e.metric }}</strong>: {{ e.detail }}</li>
+    {% endfor %}
+</ul>
+
+<h3 class="text-xl font-semibold mt-4 mb-2">Final Verdict</h3>
+<p>{{ verdict }}</p>
+
+<a href="{{ url_for('home') }}" 
+   class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+   Back Home
+</a>
+{% endblock %}

@@ -1,0 +1,268 @@
+/* static/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+/* Reset and Base */
+*,
+*::before,
+*::after {
+ margin: 0; /* Remove default margin for all elements */
+ padding: 0; /* Remove default padding for all elements */
+ box-sizing: border-box; /* Include padding/border in element's total width/height */
+}
+
+body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Set default font */
+ background-color: #f9fafb; /* Light gray background */
+ color: #1f2937; /* Default text color */
+ display: flex; /* Use flex layout for body */
+ min-height: 100vh; /* Ensure body is at least full viewport height */
+ overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.top-bar {
+    display: flex; /* Keep items in a row */
+    justify-content: space-between; /* Space between left and right text */
+    align-items: center; /* Vertically center the text */
+    padding: 15px 40px; /* Space inside header */
+    font-family: monospace; /* Keep your monospace style */
+    font-size: 0.9rem; /* Slightly smaller text */
+    background-color: var(--navy); /* Dark blue background */
+    color: white; /* White text for contrast */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Subtle shadow to lift header */
+    border-bottom: 4px solid #2563eb; /* Optional: add colored bottom border for style */
+    position: sticky; /* Keep header visible when scrolling */
+    top: 0; /* Stick to top of page */
+    z-index: 1000; /* Ensure header stays above other content */
+}
+
+/* Sidebar */
+.sidebar {
+ background-color: #111827; /* Dark sidebar background */
+ color: #fff; /* Sidebar text color */
+ width: 240px; /* Fixed sidebar width */
+ height: 100vh; /* Full viewport height */
+ position: fixed; /* Stay fixed on the screen */
+ padding: 40px 20px; /* Space inside sidebar */
+ display: flex; /* Flex layout for children */
+ flex-direction: column; /* Stack children vertically */
+ justify-content: flex-start; /* Align items at top */
+ box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow on right edge */
+}
+
+.logo-script {
+  font-family: 'Rubik Glitch', cursive;
+  font-size: 3rem;       /* big and bold */
+  letter-spacing: 0.15em;
+  text-transform: uppercase; /* KOOK in all caps */
+  animation: glitch 1.5s infinite;
+}
+
+.sidebar a {
+ color: #d1d5db; /* Sidebar link color */
+ text-decoration: none; /* Remove underline */
+ font-weight: 600; /* Semi-bold text */
+ font-size: 0.95rem; /* Slightly smaller text */
+ padding: 12px 16px; /* Space inside links */
+ border-radius: 16px; /* Rounded corners */
+ margin-bottom: 10px; /* Space between links */
+ transition: all 0.3s ease; /* Smooth hover transitions */
+ display: block; /* Make links block-level */
+}
+
+.sidebar a:hover {
+ background-color: #374151; /* Darker background on hover */
+ color: #fff; /* Text becomes white on hover */
+}
+
+/* Main Content */
+.main-content {
+ margin-left: 240px; /* Make room for sidebar */
+ padding: 60px 50px; /* Space inside main content */
+ flex: 1; /* Grow to fill remaining space */
+ background-color: #f9fafb; /* Same background as body */
+ min-height: 100vh; /* Ensure full viewport height */
+ position: relative; /* For absolutely positioned children */
+}
+
+/* Headings */
+h1 {
+ font-size: 2rem; /* Large heading size */
+ font-weight: 700; /* Bold heading */ /*I CHANGED THIS FROM &))*/
+ margin-bottom: 30px; /* Space below heading */
+ color: #111827; /* Dark text color */
+}
+
+.section-title {
+ font-size: 1.8rem; /* Slightly smaller heading */
+ font-weight: 600; /* Semi-bold */
+ margin-bottom: 20px; /* Space below heading */
+}
+
+/* Form Styling */
+form {
+ background: #ffffff; /* White form background */
+ padding: 30px; /* Space inside form */
+ border-radius: 12px; /* Rounded corners */
+ box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Subtle shadow */
+ max-width: 900px; /* Limit form width */
+ margin: 0 auto; /* Center form horizontally */
+}
+
+label {
+ display: block; /* Each label on its own line */
+ font-weight: 600; /* Semi-bold text */
+ margin-top: 20px; /* Space above label */
+ color: #1f2937; /* Dark text color */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select {
+ width: 100%; /* Full width inputs */
+ padding: 12px 15px; /* Space inside input */
+ margin-top: 8px; /* Space above input */
+ border: 1px solid #d1d5db; /* Light gray border */
+ border-radius: 16px; /* Rounded corners */
+ font-size: 1rem; /* Standard font size */
+ background: #f9fafb; /* Light background */
+ transition: border 0.3s ease; /* Smooth border color changes */
+}
+
+input:focus,
+select:focus {
+ border-color: #2563eb; /* Blue border on focus */
+ outline: none; /* Remove default focus outline */
+}
+
+/* Radio Buttons */
+input[type="radio"] {
+ margin-right: 8px; /* Space between radio and label */
+}
+
+/* Buttons */
+button,
+.submit-btn,
+a.btn {
+ margin-top: 30px; /* Space above buttons */
+ padding: 14px 28px; /* Space inside button */
+ background-color: #2563eb; /* Blue button background */
+ color: white; /* White text */
+ border: none; /* Remove default border */
+ border-radius: 16px; /* Rounded corners */
+ font-size: 1rem; /* Standard font size */
+ font-weight: 600; /* Semi-bold text */
+ cursor: pointer; /* Pointer cursor on hover */
+ transition: background-color 0.3s ease; /* Smooth hover transition */
+ display: inline-block; /* Inline-block for spacing */
+ text-align: center; /* Center text inside button */
+ text-decoration: none; /* Remove underline for links styled as buttons */
+}
+
+button:hover,
+.submit-btn:hover,
+a.btn:hover {
+ background-color: #1e40af; /* Darker blue on hover */
+}
+
+/* Link Styling */
+a {
+ color: #2563eb; /* Blue link text */
+ font-weight: 600; /* Semi-bold */
+}
+
+a:hover {
+ text-decoration: underline; /* Underline on hover */
+ color: #1e40af; /* Darker blue text on hover */
+}
+
+/* Result Blocks */
+.metric-block {
+ background-color: #ffffff; /* White block background */
+ border-left: 5px solid #2563eb; /* Colored left border */
+ padding: 20px 25px; /* Space inside block */
+ border-radius: 16px; /* Rounded corners */
+ margin-bottom: 20px; /* Space below block */
+ box-shadow: 0 2px 6px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+
+.metric-block.success {
+ border-left-color: #10b981; /* Green border for success */
+ background-color: #f0fdf4; /* Light green background */
+}
+
+/* Tiger Images (optional decoration) */
+.tiger {
+ position: absolute; /* Positioned relative to container */
+ width: 140px; /* Image width */
+ opacity: 0.1; /* Very faint */
+ top: 20%; /* Vertical position */
+ pointer-events: none; /* Ignore mouse interactions */
+ z-index: 0; /* Behind other elements */
+}
+
+.tiger.left {
+ left: -60px; /* Position left image slightly offscreen */
+ transform: rotate(-10deg); /* Slight rotation for style */
+}
+
+.tiger.right {
+ right: -60px; /* Position right image slightly offscreen */
+ transform: rotate(10deg) scaleX(-1); /* Mirror and rotate */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+ .sidebar {
+   position: relative; /* Sidebar scrolls with page */
+   width: 100%; /* Full width on small screens */
+   height: auto; /* Adjust height automatically */
+   flex-direction: row; /* Arrange items horizontally */
+   justify-content: space-around; /* Even spacing between items */
+   padding: 15px; /* Less padding on mobile */
+ }
+
+ .main-content {
+   margin-left: 0; /* Remove sidebar space */
+   padding: 30px 20px; /* Smaller padding */
+ }
+
+ .logo {
+   display: none; /* Hide logo on mobile */
+ }
+
+ .tiger {
+   display: none; /* Hide decorative images on mobile */
+ }
+}
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    opacity: 1;
+    text-shadow: 2px 0 red, -2px 0 cyan;
+  }
+  20% {
+    transform: translate(-2px, 2px);
+    opacity: 0.8;
+    text-shadow: -2px -2px red, 2px 2px cyan;
+  }
+  40% {
+    transform: translate(2px, -2px);
+    opacity: 0.9;
+    text-shadow: 2px 2px red, -2px -2px cyan;
+  }
+  60% {
+    transform: translate(-1px, 1px);
+    opacity: 1;
+    text-shadow: -1px 1px red, 1px -1px cyan;
+  }
+  80% {
+    transform: translate(1px, -1px);
+    opacity: 0.95;
+    text-shadow: 1px -1px red, -1px 1px cyan;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+    text-shadow: 2px 0 red, -2px 0 cyan;
+  }
+}

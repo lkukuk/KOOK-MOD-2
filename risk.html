@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Risk Assessment - KOOK{% endblock %}
+
+{% block content %}
+  <h1>Risk Assessment</h1>
+
+  <form method="POST" action="/risk">
+    {% for idx, q in enumerate(questions) %}
+      <div class="form-group">
+        <p><strong>{{ q.text }}</strong></p>
+        {% for key, option in q.options.items() %}
+          <label>
+            <input type="radio" name="q{{ idx }}" value="{{ key }}" required>
+            {{ key }}. {{ option }}
+          </label><br>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+
+  <a href="/">← Back to Home</a>
+{% endblock %}

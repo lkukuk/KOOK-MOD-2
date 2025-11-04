@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}Risk Result - KOOK{% endblock %}
+
+{% block content %}
+  <h1>Risk Assessment Result</h1>
+
+  <p><strong>Your total risk score is:</strong> {{ score }}</p>
+  <p>{{ message | safe }}</p>
+
+  <hr>
+
+  <h2>Investment Strategy Advisor</h2>
+
+  {% if score <= 19 %}
+    <h3>Conservative Investor</h3>
+    <p><strong>Goals:</strong> Preserve capital, earn modest returns, minimize volatility.</p>
+    <h4>Ideal Portfolio</h4>
+    <ul>
+      <li>Short-Term Bond Funds – Low volatility, low interest rate sensitivity</li>
+      <li>Intermediate-Term Bonds – Balanced yield and safety</li>
+      <li>Municipal Bond Funds – Tax-efficient income</li>
+      <li>Dividend Equity Funds – Conservative exposure to stocks with income focus</li>
+      <li>Balanced / Allocation Funds – 40/60 or 30/70 stock-to-bond ratio for stability</li>
+      <li>Money Market Funds – Near-cash equivalents, very low risk</li>
+      <li>Target-Date Funds (Near Term) – Automatically reduce risk as target date approaches</li>
+      <li>Real Estate (REITs) (limited) – Income + diversification</li>
+    </ul>
+    <h4>Tips</h4>
+    <ul>
+      <li>Avoid high-yield (junk) bonds and small-cap equity funds</li>
+      <li>Keep equity exposure under 40% of total portfolio</li>
+    </ul>
+
+  {% elif score <= 29 %}
+    <h3>Moderate Investor</h3>
+    <p><strong>Goals:</strong> Grow wealth over time, accept moderate risk for better returns, maintain diversification.</p>
+    <h4>Ideal Portfolio</h4>
+    <ul>
+      <li>Blend (Core) Equity Funds – Balanced growth and value exposure</li>
+      <li>Mid-Cap and Large-Cap Funds – Growth potential with more stability</li>
+      <li>Dividend / Income Funds – Earn income while remaining in the stock market</li>
+      <li>Target-Date Funds (Mid-Term) – Risk-reducing over time, fits retirement timelines</li>
+      <li>60/40 or 70/30 Allocation Funds – Good mix of stocks and bonds</li>
+      <li>International Equity Funds – Diversification outside U.S.</li>
+      <li>REITs or Infrastructure Funds – Inflation hedge, some income</li>
+      <li>High-Quality Corporate Bonds – Steady income with moderate risk</li>
+    </ul>
+    <h4>Tips</h4>
+    <ul>
+      <li>Avoid putting too much in sector-specific or emerging market funds</li>
+      <li>Rebalance annually to maintain target allocation</li>
+    </ul>
+
+  {% else %}
+    <h3>Aggressive Investor</h3>
+    <p><strong>Goals:</strong> Maximize capital appreciation, tolerate short-term losses, seek thematic growth.</p>
+    <h4>Ideal Portfolio</h4>
+    <ul>
+      <li>Small-Cap and Micro-Cap Funds – High growth potential, volatile</li>
+      <li>Growth Equity Funds – Companies with strong earnings growth</li>
+      <li>Emerging Market Funds – High-risk, high-return international exposure</li>
+      <li>Technology / Innovation ETFs – AI, cloud, biotech, etc.</li>
+      <li>Thematic / ESG / Blockchain ETFs – Trend-driven and speculative growth</li>
+      <li>Actively Managed Funds – Expert management aiming to outperform</li>
+      <li>International Equity Funds – Broaden high-growth potential</li>
+      <li>High-Yield Bonds (Junk) – For aggressive fixed income exposure</li>
+      <li>Private Equity or Alternative ETFs – Non-traditional assets for high returns</li>
+    </ul>
+    <h4>Tips</h4>
+    <ul>
+      <li>Maintain 10–20% in bonds or stable funds for downside protection</li>
+      <li>Watch sector and single-country overexposure</li>
+      <li>Even aggressive investors should manage risk by keeping high-risk assets limited</li>
+    </ul>
+  {% endif %}
+
+  <hr>
+  <a href="/risk">← Retake Risk Assessment</a>
+  <a href="/">Back to Home</a>
+{% endblock %}

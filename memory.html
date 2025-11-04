@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Your KOOK Memory{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto p-6 space-y-6">
+
+    <h1 class="text-3xl font-bold text-center mb-6 text-gray-800">Your KOOK Memory</h1>
+
+    {% if companies %}
+    <div class="grid gap-6 md:grid-cols-2">
+        {% for company in companies %}
+        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between">
+            <div>
+                <h2 class="text-xl font-semibold mb-2 text-blue-600">{{ company }}</h2>
+                <a href="{{ url_for('memory_detail', company=company) }}" 
+                   class="inline-block text-sm text-blue-500 hover:underline mb-4">
+                    View Details
+                </a>
+            </div>
+            <form method="POST" action="{{ url_for('delete_company', company=company) }}">
+                <button type="submit" class="mt-auto px-4 py-2 bg-red-600 text-white font-semibold rounded-2xl hover:bg-red-700 shadow-md w-full">
+                    Delete
+                </button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-gray-500 text-center">No saved evaluations yet.</p>
+    {% endif %}
+
+    <div class="mt-8 text-center">
+        <a href="{{ url_for('home') }}" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-2xl hover:bg-blue-700 shadow-md">
+            Back to Home
+        </a>
+    </div>
+
+</div>
+{% endblock %}
