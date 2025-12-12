@@ -8,7 +8,7 @@
 
  <form method="POST" action="/company">
    <label for="company">Company Name:</label>
-   <input type="text" id="company" name="company" required placeholder="e.g., Apple">
+   <input type="text" id="company" name="company" required placeholder="e.g., Apple or APPL">
 
 
    <label for="pe_ratio">P/E Ratio:</label>
@@ -46,10 +46,9 @@
    <label for="shares_outstanding">Outstanding Shares:</label>
    <input type="number" id="shares_outstanding" name="shares_outstanding" step="0.01" min="0" required placeholder="e.g., 1000000">
 
-
-   <button type="submit" class="submit-btn">Submit Evaluation</button>
+     <button type="submit" class="submit-btn">Submit</button>
+  
  </form>
-
 
  <a href="/">← Back to Home</a>
 {% endblock %}
