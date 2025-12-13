@@ -49,11 +49,15 @@ body {
 }
 
 .logo-script {
-  font-family: 'Rubik Glitch', cursive;
-  font-size: 3rem;       /* big and bold */
-  letter-spacing: 0.15em;
-  text-transform: uppercase; /* KOOK in all caps */
-  animation: glitch 1.5s infinite;
+  font-family: 'Rubik Glitch', cursive; /* Keep the glitch font */
+  font-size: 1rem;                      /* USED TO BE 2rem Make KOOK big and prominent */
+  letter-spacing: 0.15em;               /* Space out letters for style */
+  text-transform: uppercase;            /* All caps */
+  animation: glitch 1.5s infinite;      /* Keep your glitch effect */
+  font-weight: 400 !important;                     /* Normal weight, not bold */
+  color: #111827;                        /* Dark text color for visibility */
+  text-align: center;                    /* Center KOOK on the page */
+  margin-bottom: 30px;                   /* Space below the heading */
 }
 
 .sidebar a {
@@ -86,14 +90,14 @@ body {
 /* Headings */
 h1 {
  font-size: 2rem; /* Large heading size */
- font-weight: 700; /* Bold heading */ /*I CHANGED THIS FROM &))*/
+ font-weight: normal; /* Bold heading */ /*I CHANGED THIS FROM 400*/
  margin-bottom: 30px; /* Space below heading */
  color: #111827; /* Dark text color */
 }
 
 .section-title {
  font-size: 1.8rem; /* Slightly smaller heading */
- font-weight: 600; /* Semi-bold */
+ font-weight: 400; /*THIS USED TO BE  Semi-bold */
  margin-bottom: 20px; /* Space below heading */
 }
 
@@ -109,7 +113,7 @@ form {
 
 label {
  display: block; /* Each label on its own line */
- font-weight: 600; /* Semi-bold text */
+ font-weight: 400; /* Semi-bold text */
  margin-top: 20px; /* Space above label */
  color: #1f2937; /* Dark text color */
 }
